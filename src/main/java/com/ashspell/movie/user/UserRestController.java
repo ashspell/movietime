@@ -18,7 +18,7 @@ import com.ashspell.movie.user.bo.UserBO;
 import com.ashspell.movie.user.model.User;
 
 @RestController
-@RequestMapping("/movie")
+@RequestMapping("/movie	")
 public class UserRestController {
 	
 	@Autowired
