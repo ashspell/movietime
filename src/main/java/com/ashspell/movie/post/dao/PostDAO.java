@@ -36,6 +36,9 @@ public interface PostDAO {
 			@Param("title") String title,
 			@Param("content") String content
 			
+			
+			
+			
 			);
 	
 	
