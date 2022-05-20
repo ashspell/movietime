@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ 
+ <mapper namespace = "com.ashspell.movietime.user.dao.UserDAO">
+ 	<insert id ="insertUser" parameterType = "map">
+ 		INSERT INTO `user`(
+ 			
+ 			`loginid`
+ 			, `password`
+ 			, `email`
+ 			, `name`
+ 			, `createdAt`
+ 			, `updatedAt`
+ 		) value (
+ 			
+ 			#{loginid}
+ 			, #{password}
+ 			, #{email}
+ 			, #{name}
+ 			, now()
+ 			, now()
+ 		)
+ 	</insert>
+ 	
+ 	
+ 	<select id = "selectUser" parameterType = "map" resultType = "com.ashspell.movietime.user.model.User">
+ 		SELECT
+ 			`id`
+ 			, `loginid`
+ 			, `password`
+ 			, `email`
+ 			, `name`
+ 			, `createdAt`
+ 			, `updatedAt`
+ 		FROM
+ 			`user`
+ 		WHERE 
+ 		`loginid` = #{loginid} AND
+ 		`password` = #{password}
+ 	</select>
+ 	
+ 	
+ 	<select id = "selectCountByloginId" parameterType = "string" resultType = "int">
+ 		SELECT 
+ 			count(1)
+ 		FROM `user` 
+ 		
+ 		WHERE `loginid` = #{loginid}
+ 	</select>
+ 
+ 	
+ 	
+ </mapper>
