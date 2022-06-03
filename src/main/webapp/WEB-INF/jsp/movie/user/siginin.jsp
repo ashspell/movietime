@@ -25,7 +25,7 @@
 
 	</div>
 	
-		<a href = "/movie/signin_view">회원이 아니십니까? 회원가입</a>
+		<a href = "/movie/signup_view">회원이 아니십니까? 회원가입</a>
 		
 		
 	<script>
