@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+
+
+ <mapper namespace = "com.ashspell.movie.notice.dao.NoticeDAO">
+ <insert id = "insertAdminPost" parameterType = "map">
+ 	INSERT INTO `adminpost` (
+ 	`noticetitle`,
+ 	`noticecontent`,
+ 	`createdAt`,
+ 	`updatedAt`
+ 	)value(
+ 	#{noticetitle},
+ 	#{noticecontent},
+ 	now(),
+ 	now()
+ 	)
+ 	
+ </insert>
+ <select id = "selectNoticeList" parameterType = "int" resultType = "com.ashspell.movie.notice.model.Notice">
+ 	SELECT  
+ 		`id`,
+ 		`noticetitle`,
+ 		`createdAt`
+ 		
+ 	FROM `adminpost`
+ 	
+ 	ORDER BY `id` DESC
+ 
+ </select>
+ 
+ <select id = "selectnotice" parameterType = "int" resultType = "com.ashspell.movie.notice.model.Notice">
+ 	SELECT
+ 		`id`,
+ 		`noticetitle`,
+ 		`createdAt`,
+ 		`noticecontent`
+ 		
+ 	FROM `adminpost`
+ 	
+ 	WHERE `id` = #{id}
+ 
+ </select>
+ 
+ <delete id = "deletenotice" parameterType = "int">
+ 	DELETE FROM
+ 		`adminpost`
+ 		
+ 	WHERE `id` = #{id}
+ 
+ </delete>
+ 
+ <update id = "updatenotice" parameterType = "map">
+ 	UPDATE `adminpost`
+ 	SET
+ 		`noticetitle` = #{noticetitle},
+ 		`noticecontent`= #{noticecontent},
+ 		`updatedAt` = now()
+ 	WHERE
+ 		`id` = #{id}
+ 	
+ 
+ 	
+ </update>
+ 
+ 
+ 
+ 
+ </mapper>
