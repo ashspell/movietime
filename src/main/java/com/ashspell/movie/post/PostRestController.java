@@ -21,7 +21,7 @@ import com.ashspell.movie.post.model.Post;
 
 
 @RestController
-@RequestMapping("/movie")
+@RequestMapping("/movietime")
 public class PostRestController {
 
 	

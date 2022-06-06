@@ -17,7 +17,7 @@ import com.ashspell.movie.post.bo.PostBO;
 import com.ashspell.movie.post.model.Post;
 
 @Controller
-@RequestMapping("/movie")
+@RequestMapping("/movietime")
 public class PostController {
 	
 	@Autowired

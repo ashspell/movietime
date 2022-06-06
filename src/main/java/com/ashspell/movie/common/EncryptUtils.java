@@ -5,7 +5,7 @@ import java.security.NoSuchAlgorithmException;
 
 public class EncryptUtils {
 
-	// ?•”?Έ?™” λ©”μ†?“
+	// μ•”νΈν™” λ©”μ†λ“
 		public static String md5(String message) {
 			String resultData = "";
 			
@@ -13,15 +13,15 @@ public class EncryptUtils {
 			try {
 				MessageDigest md = MessageDigest.getInstance("md5");
 				
-				// λ¬Έμ?—΄?„ byte λ°°μ—΄λ΅? λ³??™
+				// λ¬Έμμ—΄μ„ byte λ°°μ—΄λ΅ λ³€ν™
 				byte[] bytes = message.getBytes();
-				// ?•”?Έ? ?…‹?…
+				// μ•”νΈν μ…‹ν…
 				md.update(bytes);
 				
-				//?•”?Έ?™”? κ²°κ³Ό ?–»κΈ?
+				//μ•”νΈν™”λ κ²°κ³Ό μ–»κΈ°
 				byte[] digest = md.digest();
 				
-				// byte λ°°μ—΄ -> 16μ§„μ λ¬Έμ?—΄
+				// byte λ°°μ—΄ -> 16μ§„μ λ¬Έμμ—΄
 				// 01001001
 				for(int i = 0; i < digest.length; i++) {
 					 resultData += Integer.toHexString(digest[i] & 0xff);
@@ -39,3 +39,4 @@ public class EncryptUtils {
 		}
 		
 }
+

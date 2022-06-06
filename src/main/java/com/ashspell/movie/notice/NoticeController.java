@@ -4,6 +4,7 @@ package com.ashspell.movie.notice;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,7 +16,7 @@ import com.ashspell.movie.notice.bo.NoticeBO;
 import com.ashspell.movie.notice.model.Notice;
 
 @Controller
-@RequestMapping("/movie")
+@RequestMapping("/movietime")
 public class NoticeController {
 	
 	
@@ -33,13 +34,13 @@ public class NoticeController {
 		
 		
 		
-		return"/project/notice/notice";
+		return "/movie/notice/notice";
 		
 	}
 	
 	@GetMapping("/noticeupload_view")
 	public String noticeupload() {
-		return"/project/notice/noticeupload";
+		return"/movie/notice/noticeupload";
 	}
 	
 	
@@ -51,7 +52,7 @@ public class NoticeController {
 		model.addAttribute("noticedetail", noticedetail);
 		
 		
-		return "/project/notice/notice_detail";
+		return "/movie/notice/notice_detail";
 	}
 	
 	@GetMapping("/noticeupdate_view")
@@ -62,7 +63,7 @@ public class NoticeController {
 		
 		model.addAttribute("noticedetail", noticeupdate);
 		
-		return "/project/notice/noticeupdate";
+		return "/movie/notice/noticeupdate";
 		}
 
 	

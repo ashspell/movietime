@@ -8,6 +8,7 @@
  <mapper namespace = "com.ashspell.movie.notice.dao.NoticeDAO">
  <insert id = "insertAdminPost" parameterType = "map">
  	INSERT INTO `adminpost` (
+ 	
  	`noticetitle`,
  	`noticecontent`,
  	`createdAt`,
