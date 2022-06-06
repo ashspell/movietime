@@ -29,7 +29,7 @@
 		<label>이름</label>
 		<input type = "text" id = "nameInput" placeholder = "이름">
 		
-		<button type = "button" id ="signupBtn">회원가입 완료</button>
+		<button type = "button"  class = "btn btn-info" id ="signupBtn">회원가입 완료</button>
 	
 	</div>
 	
@@ -91,11 +91,11 @@
 			
 				$.ajax({
 					type:"post",
-					url:"/movie/sign_up",
-					data:{"loginid":loginid, "password":password, "email":email, "name":name, "hometown":hometown},
+					url:"/movietime/sign_up",
+					data:{"loginid":loginid, "password":password, "email":email, "name":name },
 					success:function(data) {
 						if(data.result == "success") {
-							location.href= "/movie/signin_view";
+							location.href= "/movietime/signin_view";
 						}else{
 							alert("회원가입 실패");
 						}
@@ -125,7 +125,7 @@
 				$.ajax({
 				
 					type :"get",
-					url : "/project/duplicateid",
+					url : "/movietime/duplicateid",
 					data : {"loginid":loginid},
 					success:function(data) {
 						
